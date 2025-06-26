@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chic & Charm</title>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/masters.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/flexheader.css" />
+    <link rel="stylesheet" href="css/weather.css" />
+    <link rel="stylesheet" href="css/currency.css" />
+    <link rel="stylesheet" href="css/reviews.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="pre-header">
+      <div class="container pre-header-content">
+        <span class="date-time"></span>
+        <span class="weather">Сонячно 16°C, Одеса</span>
+      </div>
+    </div>
+    <header class="flex-header">
+      <div class="container header-content">
+        <div class="logo">C&C</div>
+        <nav>
+          <ul>
+            <li>
+              <a href="main.html" data-page="main">Головна</a>
+            </li>
+            <li><a href="shop.html" data-page="shop">Магазин</a></li>
+            <li><a href="support.html" data-page="support">Підтримка</a></li>
+            <li><a href="tasks.html" data-page="tasks">Задачі</a></li>
+          </ul>
+        </nav>
+        <div class="actions">
+          <div class="sign-in-register">
+            <button id="signInBtn">Вхід</button>
+            <button id="registerBtn">Реєстрація</button>
+            <div id="user-info" style="display: none">
+              <img
+                id="avatar"
+                src="images/user.png"
+                alt="Аватар"
+                style="width: 20px; height: 20px; margin-right: 5px"
+              />
+              <span id="username"></span> <button id="signOutBtn">Вихід</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section
+      class="main-section"
+      style="
+        background: url(images/background1.jpg) 0% 0% / cover no-repeat;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: #ffffff;
+        padding: 40px 20px;
+      "
+    >
+      <div class="main-background"></div>
+      <div class="main-content-wrapper">
+        <div class="main-content">
+          <h1>Chic & Charm</h1>
+          <p>
+            Chic & Charm - це оаза елегантності та бездоганного стилю, де кожна
+            деталь працює на вашу красу. Наші висококваліфіковані майстри
+            пропонують широкий спектр послуг: від вишуканих стрижок та
+            інноваційних технік фарбування до розкішних спа-процедур для волосся
+            та бездоганного манікюру з педикюром. Пориньте в атмосферу турботи
+            та насолодіться моментом, дозволяючи нам підкреслити вашу природну
+            чарівність.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="masters-section">
+      <h2>Наші майстри</h2>
+      <div class="masters-slider-container">
+        <div class="masters-slider">
+          <!-- слайди -->
+        </div>
+      </div>
+
+      <div class="slider-controls">
+        <div class="slider-control prev">←</div>
+        <div class="slider-control next">→</div>
+      </div>
+    </section>
+    <section class="weather-section">
+      <div class="weather-container">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 600">
+          Погода
+        </h2>
+        <div id="weather-data">
+          <div id="weather-icon"></div>
+          <div id="temperature" style="font-family: 'Montserrat', sans-serif">
+            Завантаження...
+          </div>
+          <div
+            id="weather-description"
+            style="font-family: 'Montserrat', sans-serif; font-size: 0.9em"
+          ></div>
+          <div
+            id="humidity"
+            style="font-family: 'Montserrat', sans-serif; font-size: 0.9em"
+          ></div>
+          <div
+            id="wind-speed"
+            style="font-family: 'Montserrat', sans-serif; font-size: 0.9em"
+          ></div>
+        </div>
+        <div class="weather-input">
+          <input
+            type="text"
+            id="city-input"
+            placeholder="Введіть назву міста"
+            style="
+              font-family: 'Montserrat', sans-serif;
+              padding: 8px;
+              margin-top: 10px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              width: calc(100% - 18px);
+            "
+          />
+          <button
+            id="get-weather"
+            style="
+              font-family: 'Montserrat', sans-serif;
+              background-color: #000;
+              color: #fff;
+              border: none;
+              padding: 10px 15px;
+              border-radius: 5px;
+              cursor: pointer;
+              margin-top: 10px;
+            "
+          >
+            Отримати погоду
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="currency-section">
+      <div class="currency-container">
+        <h2
+          style="
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 15px;
+          "
+        >
+          Обмін валют
+        </h2>
+        <div class="currency-form">
+          <div class="form-group">
+            <label
+              for="date"
+              style="font-family: 'Montserrat', sans-serif; font-size: 0.9em"
+              >Дата:</label
+            >
+            <input
+              type="date"
+              id="date"
+              style="
+                font-family: 'Montserrat', sans-serif;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: calc(100% - 18px);
+              "
+            />
+          </div>
+          <div class="form-group">
+            <label
+              for="fromCurrency"
+              style="font-family: 'Montserrat', sans-serif; font-size: 0.9em"
+              >Валюта, з якої конвертувати:</label
+            >
+            <select
+              id="fromCurrency"
+              style="
+                font-family: 'Montserrat', sans-serif;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: 100%;
+              "
+            >
+              <option value="">Виберіть валюту</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label
+              for="toCurrency"
+              style="font-family: 'Montserrat', sans-serif; font-size: 0.9em"
+              >Валюта, в яку конвертувати:</label
+            >
+            <select
+              id="toCurrency"
+              style="
+                font-family: 'Montserrat', sans-serif;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: 100%;
+              "
+            >
+              <option value="">Виберіть валюту</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label
+              for="amount"
+              style="font-family: 'Montserrat', sans-serif; font-size: 0.9em"
+              >Кількість:</label
+            >
+            <input
+              type="number"
+              id="amount"
+              placeholder="0.00"
+              style="
+                font-family: 'Montserrat', sans-serif;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: calc(100% - 18px);
+              "
+            />
+          </div>
+          <div class="form-group">
+            <label
+              for="result"
+              style="font-family: 'Montserrat', sans-serif; font-size: 0.9em"
+              >Результат:</label
+            >
+            <textarea
+              id="result"
+              rows="4"
+              readonly
+              style="
+                font-family: 'Montserrat', sans-serif;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: calc(100% - 18px);
+                resize: none;
+              "
+            ></textarea>
+          </div>
+          <button
+            id="convertBtn"
+            style="
+              font-family: 'Montserrat', sans-serif;
+              background-color: #000;
+              color: #fff;
+              border: none;
+              padding: 10px 15px;
+              border-radius: 5px;
+              cursor: pointer;
+              width: fit-content;
+              align-self: center;
+              margin-top: 10px;
+              transition: background-color 0.3s ease, transform 0.1s ease;
+            "
+          >
+            Конвертувати
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="reviews-section">
+      <div class="reviews-container">
+        <h2 class="reviews-title">Залишити відгук</h2>
+        <div class="review-form">
+          <div class="form-group">
+            <label for="rating" class="form-label">Оцінка:</label>
+            <div class="star-rating">
+              <span class="star" data-value="1">&#9733;</span>
+              <span class="star" data-value="2">&#9733;</span>
+              <span class="star" data-value="3">&#9733;</span>
+              <span class="star" data-value="4">&#9733;</span>
+              <span class="star" data-value="5">&#9733;</span>
+              <input type="hidden" id="rating" name="rating" value="0" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="reviewText" class="form-label">Ваш відгук:</label>
+            <textarea
+              id="reviewText"
+              rows="4"
+              placeholder="Напишіть свій відгук (1-299 символів)"
+              class="form-textarea"
+            ></textarea>
+          </div>
+          <button id="submitReview" class="submit-button">
+            Надіслати відгук
+          </button>
+          <div id="reviewMessage" class="review-message"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">C&C</div>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="main.html" data-page="main">Головна</a></li>
+            <li><a href="shop.html" data-page="shop">Магазин</a></li>
+            <li><a href="support.html" data-page="support">Підтримка</a></li>
+            <li><a href="tasks.html" data-page="tasks">Задачі</a></li>
+          </ul>
+        </nav>
+        <p class="footer-copyright">
+          &copy; 2025 Chic & Charm. Усі права захищені.
+        </p>
+      </div>
+    </footer>
+
+    <div id="signInModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Вхід</h2>
+        <form id="signInForm">
+          <div class="form-group">
+            <label for="signInEmailPhone">Ел. пошта або номер телефону:</label>
+            <input
+              type="text"
+              id="signInEmailPhone"
+              name="signInEmailPhone"
+              required
+            />
+            <div class="error-message" id="signInEmailPhoneError"></div>
+          </div>
+          <div class="form-group">
+            <label for="signInPassword">Пароль:</label>
+            <input
+              type="password"
+              id="signInPassword"
+              name="signInPassword"
+              required
+            />
+            <div class="error-message" id="signInPasswordError"></div>
+          </div>
+          <div
+            class="form-message success"
+            id="signInSuccessMessage"
+            style="display: none; color: green; margin-bottom: 10px"
+          ></div>
+          <div
+            class="form-message error"
+            id="signInErrorMessage"
+            style="display: none; color: red; margin-bottom: 10px"
+          ></div>
+          <button type="submit">Увійти</button>
+          <p>
+            Немає аккаунту? <a href="#" id="goToRegister">Зареєструватися</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Реєстрація</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerName">Ім'я:</label>
+            <input type="text" id="registerName" name="registerName" required />
+            <div class="error-message" id="registerNameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="registerPhone">Номер телефону:</label>
+            <input
+              type="tel"
+              id="registerPhone"
+              name="registerPhone"
+              required
+            />
+            <div class="error-message" id="registerPhoneError"></div>
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Ел. пошта:</label>
+            <input
+              type="email"
+              id="registerEmail"
+              name="registerEmail"
+              required
+            />
+            <div class="error-message" id="registerEmailError"></div>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Пароль:</label>
+            <input
+              type="password"
+              id="registerPassword"
+              name="registerPassword"
+              required
+            />
+            <div class="error-message" id="registerPasswordError"></div>
+          </div>
+          <div
+            class="form-message success"
+            id="registerSuccessMessage"
+            style="display: none; color: green; margin-bottom: 10px"
+          ></div>
+          <div
+            class="form-message error"
+            id="registerErrorMessage"
+            style="display: none; color: red; margin-bottom: 10px"
+          ></div>
+          <button type="submit">Зареєструватися</button>
+          <p>Вже є аккаунт? <a href="#" id="goToSignIn">Увійти</a></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/header.js"></script>
+    <script src="js/dateTime.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/masters.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/currency.js"></script>
+    <script src="js/headerweather.js"></script>
+    <script src="js/reviews.js"></script>
+  </body>
+</html>

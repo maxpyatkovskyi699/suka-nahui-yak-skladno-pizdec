@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+/* Загальні стилі */
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* pre-header */
+.pre-header {
+  background: #000000;
+  color: #ffffff;
+  padding: 10px 0;
+}
+
+.pre-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pre-header .date-time,
+.pre-header .weather {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+/* header */
+header {
+  background: #ffffff;
+  padding: 15px 0; /* Зменшуємо вертикальні відступи */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: auto; /* Дозволяємо висоті адаптуватися до вмісту */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Lobster", cursive;
+  font-size: 48px; /* Трохи зменшуємо розмір логотипу */
+  color: #ff0043;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px; /* Трохи зменшуємо відстань між елементами навігації */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 700;
+  font-size: 18px; /* Трохи зменшуємо розмір шрифту навігації */
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff0043;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Трохи зменшуємо відстань між елементами дій */
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Трохи зменшуємо відстань між елементами кошика */
+}
+
+.cart span {
+  font-weight: 600;
+  font-size: 16px; /* Трохи зменшуємо розмір шрифту кошика */
+  color: #000000;
+}
+
+.cart img {
+  width: 24px; /* Трохи зменшуємо розмір іконки кошика */
+  height: 24px;
+}
+
+.sign-in-register {
+  display: flex;
+  align-items: center;
+}
+
+.sign-in-register button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  margin-left: 10px;
+  font-family: "Montserrat", sans-serif; /* Застосовано шрифт Montserrat */
+  font-weight: 500; /* Напівжирне накреслення */
+  text-transform: uppercase; /* Верхній регістр */
+  letter-spacing: 0.5px; /* Міжбуквене розрідження */
+  cursor: pointer; /* Додано курсор-вказівник */
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    transform 0.2s ease-in-out; /* Плавні переходи */
+}
+
+#signInBtn {
+  background-color: black; /* Чорний фон для "Вхід" */
+  color: white;
+}
+
+#registerBtn {
+  background-color: #ff0043; /* Червоний фон для "Реєстрація" */
+  color: white;
+}
+
+#signInBtn:hover {
+  background-color: #333; /* Темніший відтінок при наведенні */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Легка тінь при наведенні */
+  transform: translateY(-1px); /* Невелике підняття при наведенні */
+}
+
+#registerBtn:hover {
+  background-color: #e60038; /* Темніший відтінок червоного при наведенні */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Легка тінь при наведенні */
+  transform: translateY(-1px); /* Невелике підняття при наведенні */
+}
+
+#user-info {
+  display: none; /* Приховано за замовчуванням */
+  align-items: center;
+  margin-left: 10px;
+  font-family: "Montserrat", sans-serif; /* Шрифт Montserrat для блоку користувача */
+  font-size: 1em;
+}
+
+#user-info img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+#user-info span {
+  margin-right: 10px;
+}
+
+#signOutBtn {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-left: 5px;
+  font-family: "Montserrat", sans-serif; /* Шрифт Montserrat для кнопки виходу */
+}
+
+#signOutBtn:hover {
+  background-color: #f0f0f0;
+}
+
+nav ul li a.active {
+  color: #ff0043; /* Колір активного посилання */
+  font-weight: 800;
+}

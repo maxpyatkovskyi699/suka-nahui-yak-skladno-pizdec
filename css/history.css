@@ -1,0 +1,28 @@
+/* Імпорт шрифту Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+.history-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  color: #000; /* Задайте бажаний колір тексту */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: opacity 0.3s ease;
+  margin-left: 20px; /* Додайте відступ зліва за потреби */
+}
+
+.history-button:hover {
+  opacity: 0.8;
+}
+
+.history-button img {
+  width: 24px; /* Задайте бажаний розмір іконки */
+  height: 24px;
+  margin-right: 5px;
+}
+
+.history-button span {
+  font-family: "Montserrat", sans-serif;
+}

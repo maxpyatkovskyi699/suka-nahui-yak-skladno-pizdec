@@ -1,0 +1,98 @@
+/* main.css */
+
+.main-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  left: 0;
+  top: auto;
+  color: #ffffff;
+  display: flex;
+  justify-content: center; /* Центруємо обгортку контенту */
+  align-items: center;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+.main-background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-blend-mode: darken;
+  z-index: -1;
+}
+
+.main-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Чорний з прозорістю 60% для затемнення */
+  z-index: 0; /* Розміщуємо затемнення над картинкою */
+}
+
+.main-content-wrapper {
+  max-width: 1440px; /* Обмежуємо максимальну ширину для контенту */
+  width: 100%; /* Займає всю доступну ширину */
+  display: flex;
+  justify-content: flex-start; /* Вирівнюємо текст по лівому краю */
+  padding: 0 20px; /* Відступи з боків для контенту */
+  box-sizing: border-box;
+  position: relative; /* Щоб контент був над затемненням */
+  z-index: 1;
+}
+
+.main-content {
+  max-width: 90%; /* Обмежуємо ширину текстового блоку */
+}
+
+.main-content h1 {
+  font-family: "Lobster", cursive;
+  font-size: 72px;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  font-weight: 400; /* Змінено на менш жирний */
+}
+
+.main-content p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+/* Медіа запити для менших екранів */
+@media (max-width: 768px) {
+  .main-section {
+    padding: 60px 20px;
+    align-items: flex-start;
+  }
+  .main-content h1 {
+    font-size: 48px;
+  }
+  .main-content p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-section {
+    padding: 40px 15px;
+    align-items: flex-start;
+  }
+  .main-content h1 {
+    font-size: 36px;
+  }
+  .main-content p {
+    font-size: 16px;
+  }
+}

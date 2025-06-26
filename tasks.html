@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chic & Charm - Задачі</title>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/flexheader.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/tasks.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="pre-header">
+      <div class="container pre-header-content">
+        <span class="date-time"></span>
+        <span class="weather">Сонячно 16°C, Одеса</span>
+      </div>
+    </div>
+    <header class="flex-header">
+      <div class="container header-content">
+        <div class="logo">C&C</div>
+        <nav>
+          <ul>
+            <li>
+              <a href="main.html" data-page="main">Головна</a>
+            </li>
+            <li><a href="shop.html" data-page="shop">Магазин</a></li>
+            <li><a href="support.html" data-page="support">Підтримка</a></li>
+            <li><a href="tasks.html" data-page="tasks">Задачі</a></li>
+          </ul>
+        </nav>
+        <div class="actions">
+          <div class="sign-in-register">
+            <button id="signInBtn">Вхід</button>
+            <button id="registerBtn">Реєстрація</button>
+            <div id="user-info" style="display: none">
+              <img
+                id="avatar"
+                src="images/user.png"
+                alt="Аватар"
+                style="width: 20px; height: 20px; margin-right: 5px"
+              />
+              <span id="username"></span> <button id="signOutBtn">Вихід</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="tasks-container">
+      <h2>Ваші задачі</h2>
+      <div class="task-input">
+        <input type="text" id="newTaskInput" placeholder="Нова задача" />
+        <button id="addTaskBtn">Додати задачу</button>
+      </div>
+
+      <div class="task-filter">
+        <label for="statusFilter">Фільтр за статусом:</label>
+        <select id="statusFilter">
+          <option value="all">Всі</option>
+          <option value="active">В роботі</option>
+          <option value="done">Виконано</option>
+          <option value="deleted">Видалено</option>
+        </select>
+      </div>
+
+      <ul id="taskList"></ul>
+
+      <h3 style="display: none" id="doneTasksTitle">Виконані задачі</h3>
+      <ul id="doneTaskList"></ul>
+
+      <h3 style="display: none" id="deletedTasksTitle">Видалені задачі</h3>
+      <ul id="deletedTaskList"></ul>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">C&C</div>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="main.html" data-page="main">Головна</a></li>
+            <li><a href="shop.html" data-page="shop">Магазин</a></li>
+            <li><a href="support.html" data-page="support">Підтримка</a></li>
+            <li><a href="tasks.html" data-page="tasks">Задачі</a></li>
+          </ul>
+        </nav>
+        <p class="footer-copyright">
+          &copy; 2025 Chic & Charm. Усі права захищені.
+        </p>
+      </div>
+    </footer>
+
+    <div id="signInModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Вхід</h2>
+        <form id="signInForm">
+          <div class="form-group">
+            <label for="signInEmailPhone">Ел. пошта або номер телефону:</label>
+            <input
+              type="text"
+              id="signInEmailPhone"
+              name="signInEmailPhone"
+              required
+            />
+            <div class="error-message" id="signInEmailPhoneError"></div>
+          </div>
+          <div class="form-group">
+            <label for="signInPassword">Пароль:</label>
+            <input
+              type="password"
+              id="signInPassword"
+              name="signInPassword"
+              required
+            />
+            <div class="error-message" id="signInPasswordError"></div>
+          </div>
+          <div
+            class="form-message success"
+            id="signInSuccessMessage"
+            style="display: none; color: green; margin-bottom: 10px"
+          ></div>
+          <div
+            class="form-message error"
+            id="signInErrorMessage"
+            style="display: none; color: red; margin-bottom: 10px"
+          ></div>
+          <button type="submit">Увійти</button>
+          <p>
+            Немає аккаунту? <a href="#" id="goToRegister">Зареєструватися</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Реєстрація</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerName">Ім'я:</label>
+            <input type="text" id="registerName" name="registerName" required />
+            <div class="error-message" id="registerNameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="registerPhone">Номер телефону:</label>
+            <input
+              type="tel"
+              id="registerPhone"
+              name="registerPhone"
+              required
+            />
+            <div class="error-message" id="registerPhoneError"></div>
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Ел. пошта:</label>
+            <input
+              type="email"
+              id="registerEmail"
+              name="registerEmail"
+              required
+            />
+            <div class="error-message" id="registerEmailError"></div>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Пароль:</label>
+            <input
+              type="password"
+              id="registerPassword"
+              name="registerPassword"
+              required
+            />
+            <div class="error-message" id="registerPasswordError"></div>
+          </div>
+          <div
+            class="form-message success"
+            id="registerSuccessMessage"
+            style="display: none; color: green; margin-bottom: 10px"
+          ></div>
+          <div
+            class="form-message error"
+            id="registerErrorMessage"
+            style="display: none; color: red; margin-bottom: 10px"
+          ></div>
+          <button type="submit">Зареєструватися</button>
+          <p>Вже є аккаунт? <a href="#" id="goToSignIn">Увійти</a></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/header.js"></script>
+    <script src="js/dateTime.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/headerweather.js"></script>
+    <script src="js/tasks.js"></script>
+  </body>
+</html>

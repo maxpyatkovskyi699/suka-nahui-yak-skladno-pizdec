@@ -1,0 +1,149 @@
+.weather-section {
+  background-color: #fff;
+  padding: 15px; /* Трохи зменшимо відступи для менших екранів */
+  margin-top: 15px; /* Трохи зменшимо верхній відступ */
+  width: 90%; /* Займаємо більшу частину ширини на малих екранах */
+  max-width: 400px; /* Обмежуємо максимальну ширину для більших телефонів та планшетів */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.weather-container {
+  border: 2px solid #000;
+  padding: 10px; /* Трохи зменшимо внутрішні відступи */
+  border-radius: 8px;
+}
+
+#weather-data {
+  margin-bottom: 10px; /* Трохи зменшимо нижній відступ */
+  text-align: center;
+}
+
+#weather-icon img {
+  width: 40px; /* Зменшимо розмір іконки */
+  height: 40px; /* Зменшимо розмір іконки */
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+#temperature {
+  font-size: 1.3em; /* Трохи зменшимо розмір шрифту */
+  margin-top: 3px; /* Трохи зменшимо верхній відступ */
+  font-family: "Montserrat", sans-serif;
+}
+
+#weather-description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85em; /* Трохи зменшимо розмір шрифту */
+}
+
+#humidity {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85em; /* Трохи зменшимо розмір шрифту */
+}
+
+#wind-speed {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85em; /* Трохи зменшимо розмір шрифту */
+}
+
+.weather-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Трохи збільшимо відстань між елементами вводу */
+}
+
+.weather-input input {
+  font-family: "Montserrat", sans-serif;
+  padding: 10px; /* Збільшимо внутрішні відступи для зручності введення */
+  margin-top: 8px; /* Трохи зменшимо верхній відступ */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(100% - 22px); /* Врахуємо збільшені відступи */
+}
+
+.weather-input button {
+  font-family: "Montserrat", sans-serif;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 20px; /* Збільшимо розмір кнопки для зручності натискання */
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: fit-content;
+  align-self: center;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.weather-input button:hover {
+  background-color: #333;
+}
+
+.weather-input button:active {
+  transform: scale(0.95);
+}
+
+.weather-section h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.2em; /* Трохи зменшимо розмір заголовка на малих екранах */
+}
+
+/* Медіа-запит для планшетів (орієнтація landscape або ширина екрана >= 600px) */
+@media (min-width: 600px) {
+  .weather-section {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .weather-container {
+    padding: 15px;
+  }
+
+  #weather-data {
+    margin-bottom: 15px;
+  }
+
+  #weather-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  #temperature {
+    font-size: 1.5em;
+    margin-top: 5px;
+  }
+
+  #weather-description {
+    font-size: 0.9em;
+  }
+
+  #humidity {
+    font-size: 0.9em;
+  }
+
+  #wind-speed {
+    font-size: 0.9em;
+  }
+
+  .weather-input {
+    gap: 5px;
+  }
+
+  .weather-input input {
+    padding: 8px;
+    margin-top: 10px;
+    width: calc(100% - 18px);
+  }
+
+  .weather-input button {
+    padding: 10px 15px;
+    margin-top: 10px;
+  }
+
+  .weather-section h2 {
+    font-size: 1.4em; /* Трохи збільшимо розмір заголовка на планшетах */
+  }
+}

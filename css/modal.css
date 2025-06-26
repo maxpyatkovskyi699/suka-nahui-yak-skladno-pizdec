@@ -1,0 +1,131 @@
+/* Імпорт шрифту Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+/* Стилі для модального вікна деталей */
+#details-modal .modal-content {
+  max-width: 600px;
+}
+
+#details-content p {
+  margin-bottom: 10px;
+}
+
+#details-content img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Стилі для модального вікна попередження */
+#warning-modal .modal-content {
+  max-width: 400px;
+  text-align: center;
+}
+
+#warning-modal p {
+  margin-bottom: 20px;
+}
+
+#warning-modal button {
+  background-color: #ffc107; /* Жовтий колір для попередження */
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#warning-modal button:hover {
+  background-color: #e0a800;
+}
+
+#warning-modal button:active {
+  transform: scale(0.95);
+}
+
+/* Стилі для модального вікна подяки */
+#thank-you-modal .modal-content {
+  max-width: 400px;
+  text-align: center;
+}
+
+#thank-you-modal h2 {
+  margin-bottom: 20px;
+}
+
+#thank-you-modal button {
+  background-color: #28a745; /* Зелений колір для успіху */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#thank-you-modal button:hover {
+  background-color: #1e7e34;
+}
+
+#thank-you-modal button:active {
+  transform: scale(0.95);
+}
+
+/* Стилі для модального вікна підтвердження */
+#confirm-modal .modal-content {
+  max-width: 400px;
+  text-align: center;
+}
+
+#confirm-modal p {
+  margin-bottom: 20px;
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.confirm-buttons button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  transition: transform 0.2s ease;
+}
+
+#confirm-yes {
+  background-color: #28a745; /* Зелений колір для "Так" */
+  color: white;
+  border: none;
+}
+
+#confirm-yes:hover {
+  background-color: #1e7e34;
+}
+
+#confirm-yes:active {
+  transform: scale(0.95);
+}
+
+#confirm-modal button:not(#confirm-yes) {
+  background-color: #dc3545; /* Червоний колір для "Ні" */
+  color: white;
+  border: none;
+}
+
+#confirm-modal button:not(#confirm-yes):hover {
+  background-color: #c82333;
+}
+
+#confirm-modal button:not(#confirm-yes):active {
+  transform: scale(0.95);
+}

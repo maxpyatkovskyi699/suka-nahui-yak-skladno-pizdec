@@ -1,0 +1,214 @@
+/* css/tasks.css */
+.tasks-container {
+  max-width: 90%; /* Зробимо контейнер менш фіксованим для адаптивності */
+  margin: 20px auto;
+  padding: 15px; /* Трохи зменшимо відступи для менших екранів */
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: #fff; /* Білий фон для контрасту */
+  font-family: "Montserrat", sans-serif; /* Застосовуємо шрифт Montserrat */
+}
+
+h2,
+h3,
+label,
+button,
+input[type="text"],
+select,
+.task-text,
+.task-details {
+  font-family: "Montserrat", sans-serif; /* Застосовуємо шрифт Montserrat до всіх текстових елементів */
+}
+
+.task-input {
+  display: flex;
+  margin-bottom: 15px;
+  flex-direction: column; /* Для кращого відображення на малих екранах */
+}
+
+.task-input input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 3px;
+  font-size: 16px;
+  margin-bottom: 10px; /* Додамо відступ між полем введення та кнопкою на малих екранах */
+}
+
+.task-input button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: #5cb85c;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-input button:hover {
+  background-color: #4cae4c;
+}
+
+.task-filter {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Для кращого відображення на малих екранах */
+  align-items: flex-start; /* Вирівнюємо елементи зліва на малих екранах */
+}
+
+.task-filter label {
+  margin-right: 0; /* Забираємо відступ справа на малих екранах */
+  margin-bottom: 5px; /* Додамо відступ знизу для кращого вигляду */
+  font-weight: bold;
+}
+
+.task-filter select {
+  padding: 8px;
+  border: 2px solid #000;
+  border-radius: 3px;
+  font-size: 16px;
+  width: 100%; /* Розтягуємо select на всю ширину на малих екранах */
+}
+
+#taskList,
+#doneTaskList,
+#deletedTaskList {
+  list-style: none;
+  padding: 0;
+}
+
+#taskList li,
+#doneTaskList li,
+#deletedTaskList li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  border-radius: 3px;
+  flex-wrap: wrap; /* Дозволяємо елементам переноситися на новий рядок */
+}
+
+#taskList li:last-child,
+#doneTaskList li:last-child,
+#deletedTaskList li:last-child {
+  border-bottom: none;
+}
+
+.task-text {
+  flex-grow: 1;
+  font-size: 16px;
+  margin-right: 10px; /* Додамо трохи відступу між текстом та діями */
+  min-width: 200px; /* Забезпечимо мінімальну ширину для тексту */
+}
+
+.task-text.deleted {
+  text-decoration: line-through;
+  font-style: italic;
+  color: #777;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px; /* Збільшено відступ між кнопками */
+}
+
+.task-actions button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex; /* Для центрування іконки */
+  align-items: center;
+  justify-content: center;
+  width: 24px; /* Трохи збільшимо розмір для кращої видимості кольору */
+  height: 24px;
+  border-radius: 50%; /* Робимо фон круглим */
+}
+
+.task-actions button.done {
+  background-color: #5cb85c; /* Зелений фон для галочки */
+}
+
+.task-actions button.delete {
+  background-color: #d9534f; /* Червоний фон для хрестика */
+}
+
+.task-actions button img {
+  width: 14px; /* Зменшимо розмір самої іконки всередині кольорового кола */
+  height: 14px;
+}
+
+.task-details {
+  font-size: 12px;
+  color: #888;
+  margin-left: auto; /* Притискаємо деталі до правого краю, якщо є місце */
+  flex-basis: 100%; /* Переносимо на новий рядок на малих екранах */
+}
+
+/* Адаптивність для планшетів (орієнтовно 768px) */
+@media (min-width: 768px) {
+  .tasks-container {
+    max-width: 800px;
+    padding: 20px;
+  }
+
+  .task-input {
+    flex-direction: row;
+  }
+
+  .task-input input[type="text"] {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  .task-filter {
+    flex-direction: row;
+    align-items: center;
+    align-items: baseline; /* Краще вирівнювання label та select */
+  }
+
+  .task-filter label {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  .task-filter select {
+    width: auto; /* Повертаємо автоматичну ширину на планшетах */
+  }
+
+  #taskList li,
+  #doneTaskList li,
+  #deletedTaskList li {
+    flex-wrap: nowrap; /* Забороняємо перенесення на планшетах */
+  }
+
+  .task-details {
+    margin-left: 5px;
+    flex-basis: auto; /* Повертаємо автоматичну ширину на планшетах */
+  }
+}
+
+/* Адаптивність для телефонів (максимум 480px) */
+@media (max-width: 480px) {
+  .tasks-container {
+    padding: 10px;
+  }
+
+  .task-text {
+    font-size: 14px;
+    min-width: auto; /* Дозволяємо зменшуватися на малих екранах */
+  }
+
+  .task-actions img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .task-details {
+    font-size: 10px;
+  }
+}

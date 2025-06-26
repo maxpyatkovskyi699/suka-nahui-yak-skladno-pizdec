@@ -1,0 +1,134 @@
+.reviews-section {
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 40px; /* Додаємо відступ знизу */
+  border: 2px solid #000;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+.reviews-container {
+  padding: 10px;
+}
+
+.reviews-title {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.review-form {
+  display: flex; /* Використовуємо flex для центрування кнопки */
+  flex-direction: column;
+  align-items: center; /* Центруємо елементи по горизонталі */
+}
+
+.review-form .form-group {
+  margin-bottom: 12px;
+  width: 100%; /* Щоб label та textarea займали всю ширину */
+}
+
+.form-label {
+  font-size: 1em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+  font-size: 28px;
+  color: #ccc;
+  cursor: pointer;
+  justify-content: flex-start; /* Вирівнюємо зірки зліва */
+}
+
+.star-rating .star {
+  transition: color 0.2s ease-in-out;
+}
+
+.star-rating .star.active,
+.star-rating .star:hover {
+  color: gold;
+}
+
+.form-textarea {
+  width: calc(100% - 16px);
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 1em;
+  resize: vertical;
+  font-family: "Montserrat", sans-serif; /* Додано шрифт для textarea */
+}
+
+.submit-button {
+  font-family: "Montserrat", sans-serif;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #000;
+  padding: 14px 25px; /* Збільшено розмір шрифту всередині кнопки */
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content; /* Кнопка займає лише необхідну ширину */
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.submit-button:hover {
+  background-color: #333;
+}
+
+.submit-button:active {
+  transform: scale(0.95);
+}
+
+.review-message {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+/* Медіа-запит для більших екранів */
+@media (min-width: 600px) {
+  .reviews-section {
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 500px;
+    margin-bottom: 60px;
+  }
+
+  .reviews-title {
+    font-size: 1.4em;
+  }
+
+  .form-label {
+    font-size: 1.1em;
+  }
+
+  .star-rating {
+    font-size: 32px;
+    gap: 8px;
+  }
+
+  .form-textarea {
+    padding: 12px;
+    font-size: 1.1em;
+  }
+
+  .submit-button {
+    padding: 16px 30px; /* Ще трохи збільшимо розмір кнопки на великих екранах */
+    margin-top: 20px;
+    font-size: 1.1em; /* Збільшимо розмір шрифту на великих екранах */
+  }
+
+  .review-message {
+    font-size: 1em;
+  }
+}

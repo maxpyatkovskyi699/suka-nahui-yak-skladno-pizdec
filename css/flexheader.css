@@ -1,0 +1,330 @@
+.flex-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.flex-header .logo {
+  font-family: "Lobster", cursive;
+  font-size: 48px;
+  color: #ff0043;
+}
+
+.flex-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Вже є, забезпечує рядкове відображення */
+  gap: 20px;
+}
+
+.flex-header nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.flex-header nav ul li a:hover {
+  color: #ff0043;
+}
+
+.flex-header nav ul li a.active {
+  color: #ff0043;
+  font-weight: 800;
+}
+
+.flex-header .actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.flex-header .cart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.flex-header .cart span {
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+}
+
+.flex-header .cart img {
+  width: 24px;
+  height: 24px;
+}
+
+.flex-header .sign-in-register {
+  display: flex;
+  align-items: center;
+}
+
+.flex-header .sign-in-register button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9em;
+  margin-left: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+.flex-header .sign-in-register #signInBtn {
+  background-color: black;
+  color: white;
+}
+
+.flex-header .sign-in-register #registerBtn {
+  background-color: #ff0043;
+  color: white;
+}
+
+.flex-header .sign-in-register #signInBtn:hover {
+  background-color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.flex-header .sign-in-register #registerBtn:hover {
+  background-color: #e60038;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.flex-header .sign-in-register #user-info {
+  display: none;
+  align-items: center;
+  margin-left: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+}
+
+.flex-header .sign-in-register #user-info img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.flex-header .sign-in-register #user-info span {
+  margin-right: 10px;
+}
+
+.flex-header .sign-in-register #signOutBtn {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-left: 5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.flex-header .sign-in-register #signOutBtn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Адаптивність для планшетів (орієнтація landscape) */
+@media (max-width: 1024px) and (min-width: 769px) and (orientation: landscape) {
+  .flex-header .header-content {
+    padding: 15px 30px;
+  }
+
+  .flex-header nav ul {
+    gap: 15px; /* Трохи зменшуємо відстань на планшетах */
+  }
+
+  .flex-header nav ul li a {
+    font-size: 16px; /* Трохи менший шрифт на планшетах */
+  }
+
+  .flex-header .actions {
+    gap: 10px; /* Трохи зменшуємо відстань на планшетах */
+  }
+
+  .flex-header .cart span {
+    font-size: 14px; /* Трохи менший шрифт на планшетах */
+  }
+
+  .flex-header .sign-in-register button {
+    padding: 6px 10px; /* Ще трохи менші відступи */
+    font-size: 0.85em; /* Ще трохи менший шрифт */
+    margin-left: 5px;
+  }
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .flex-header .header-content {
+    flex-direction: column; /* Змінюємо на вертикальне розташування */
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .flex-header .logo {
+    margin-bottom: 8px;
+    font-size: 32px; /* Ще менший логотип на мобільному */
+  }
+
+  .flex-header nav ul {
+    flex-direction: row; /* **Важлива зміна:** Встановлюємо рядкове відображення */
+    width: 100%;
+    margin-bottom: 10px;
+    gap: 10px;
+    justify-content: space-between; /* Розміщуємо вкладки на всю ширину */
+  }
+
+  .flex-header nav ul li {
+    margin-left: 0;
+  }
+
+  .flex-header nav ul li a {
+    font-size: 14px; /* Трохи менший шрифт на мобільному */
+  }
+
+  .flex-header .actions {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px; /* Додаємо відступ від навігації */
+  }
+
+  .flex-header .cart {
+    margin-right: 0; /* Забираємо відступ справа на мобільному */
+  }
+
+  .flex-header .sign-in-register {
+    flex-direction: row; /* Залишаємо в один рядок на мобільному */
+    align-items: center;
+    gap: 5px; /* Зменшуємо відступ між кнопками на мобільному */
+    width: auto; /* Автоматична ширина для кнопок в рядку */
+  }
+
+  .flex-header .sign-in-register button {
+    margin-left: 5px;
+    width: auto; /* Автоматична ширина для кнопок */
+    padding: 6px 10px; /* Трохи менші відступи на мобільному */
+    font-size: 0.8em; /* Ще трохи менший шрифт на мобільному */
+  }
+
+  .flex-header .sign-in-register #user-info {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .flex-header .sign-in-register #user-info span {
+    margin-right: 0;
+  }
+
+  .flex-header .sign-in-register #user-info #signOutBtn {
+    margin-left: 10px;
+  }
+}
+
+/* Адаптивність для планшетів (портретна орієнтація) */
+@media (max-width: 1024px) and (min-width: 769px) and (orientation: portrait) {
+  .flex-header .header-content {
+    flex-direction: column;
+    align-items: center; /* Вирівнюємо по центру в портретній орієнтації */
+    padding: 15px 20px;
+  }
+
+  .flex-header .logo {
+    margin-bottom: 10px;
+    font-size: 40px;
+  }
+
+  .flex-header nav ul {
+    flex-direction: row; /* **Важлива зміна:** Встановлюємо рядкове відображення */
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+    justify-content: center; /* Вирівнюємо вкладки по центру */
+  }
+
+  .flex-header nav ul li {
+    margin-left: 0;
+  }
+
+  .flex-header nav ul li a {
+    font-size: 16px;
+  }
+
+  .flex-header .actions {
+    width: 100%;
+    justify-content: space-around; /* Розміщуємо елементи дій рівномірно */
+    margin-top: 15px; /* Додаємо відступ від навігації */
+  }
+
+  .flex-header .sign-in-register {
+    flex-direction: row; /* Кнопки в ряд на планшеті (портрет) */
+    justify-content: center;
+    gap: 10px; /* Трохи менший відступ між кнопками */
+    width: auto;
+  }
+
+  .flex-header .sign-in-register button {
+    width: auto; /* Автоматична ширина кнопок */
+    margin-left: 5px; /* Зменшений відступ */
+    padding: 8px 12px; /* Трохи менші відступи */
+    font-size: 0.9em; /* Трохи менший шрифт */
+  }
+
+  .flex-header .sign-in-register #user-info {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+/* Стилі для pre-header */
+.pre-header {
+  background-color: #000000;
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 0.9em; /* Загальний менший розмір шрифту для pre-header */
+}
+
+.pre-header .pre-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .pre-header {
+    font-size: 0.75em; /* Ще менший розмір шрифту на мобільних */
+    padding: 3px 10px; /* Зменшуємо відступи */
+  }
+
+  .pre-header .pre-header-content {
+    display: flex; /* Знову використовуємо flex для розташування в ряд */
+    flex-direction: row; /* Розташовуємо елементи в ряд */
+    justify-content: space-between; /* Розміщуємо час та погоду по краях */
+    align-items: center; /* Вирівнюємо по вертикалі */
+  }
+
+  .pre-header .date-time,
+  .pre-header .weather {
+    font-size: 0.85em; /* Трохи менший розмір шрифту для дати/часу та погоди */
+  }
+
+  /* Зміни для .sign-in-register button на мобільних, зберігаючи коліри */
+  .flex-header .sign-in-register button {
+    padding: 6px 10px; /* Трохи менші відступи на мобільному */
+    font-size: 0.8em; /* Ще трохи менший шрифт на мобільному */
+    margin-left: 3px; /* Трохи зменшуємо лівий відступ */
+  }
+}

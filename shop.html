@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chic & Charm - Магазин</title>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/flexheader.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/shop.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="stylesheet" href="css/history.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/sort.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="pre-header">
+      <div class="container pre-header-content">
+        <span class="date-time"></span>
+        <span class="weather">Сонячно 16°C, Одеса</span>
+      </div>
+    </div>
+    <header class="flex-header">
+      <div class="container header-content">
+        <div class="logo">C&C</div>
+        <nav>
+          <ul>
+            <li>
+              <a href="main.html" data-page="main">Головна</a>
+            </li>
+            <li><a href="shop.html" data-page="shop">Магазин</a></li>
+            <li><a href="support.html" data-page="support">Підтримка</a></li>
+            <li><a href="tasks.html" data-page="tasks">Задачі</a></li>
+          </ul>
+        </nav>
+        <div class="actions">
+          <button class="history-button">
+            <img src="images/history.png" alt="Історія замовлень" />
+            <span>Історія замовлень</span>
+          </button>
+          <div class="cart-section">
+            <div class="cart-icon" onclick="toggleCart()">
+              <img src="images/trolley.png" alt="Візок" />
+              <span id="cart-item-count">0</span>
+            </div>
+            <span class="cart-total">0.00 UAH</span>
+          </div>
+          <div class="sign-in-register">
+            <button id="signInBtn">Вхід</button>
+            <button id="registerBtn">Реєстрація</button>
+            <div id="user-info" style="display: none">
+              <img
+                id="avatar"
+                src="images/user.png"
+                alt="Аватар"
+                style="width: 20px; height: 20px; margin-right: 5px"
+              />
+              <span id="username"></span> <button id="signOutBtn">Вихід</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <h2 class="centered-title">Прайс товарів та послуг</h2>
+    <div
+      class="sorting-options"
+      style="text-align: center; margin-bottom: 10px"
+    >
+      <span>Сортувати за:</span>
+      <select id="sort-by">
+        <option value="default">За замовчуванням</option>
+        <option value="price-asc">Ціна (від дешевших до дорожчих)</option>
+        <option value="price-desc">Ціна (від дорожчих до дешевших)</option>
+        <option value="title-asc">Назва (А-Я)</option>
+        <option value="title-desc">Назва (Я-А)</option>
+      </select>
+    </div>
+    <div class="product-grid">
+      <!-- ID 1: Чоловіча стрижка -->
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/men-haircut.jpg" alt="Чоловіча стрижка" />
+        </div>
+        <h3 class="product-title">Чоловіча стрижка</h3>
+        <p class="product-price">Ціна: 299.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="1">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="1">Деталі</button>
+      </div>
+
+      <!-- ID 2: Жіноча стрижка -->
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/women-haircut.jpg" alt="Жіноча стрижка" />
+        </div>
+        <h3 class="product-title">Жіноча стрижка</h3>
+        <p class="product-price">Ціна: 349.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="2">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="2">Деталі</button>
+      </div>
+
+      <!-- ID 3: Манікюр -->
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/manicure.jpg" alt="Манікюр" />
+        </div>
+        <h3 class="product-title">Манікюр</h3>
+        <p class="product-price">Ціна: 199.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="3">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="3">Деталі</button>
+      </div>
+
+      <!-- ID 4: Педикюр -->
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/pedicure.jpg" alt="Педикюр" />
+        </div>
+        <h3 class="product-title">Педикюр</h3>
+        <p class="product-price">Ціна: 249.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="4">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="4">Деталі</button>
+      </div>
+
+      <!-- ID 5: Фарбування волосся -->
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/hair-color.jpeg" alt="Фарбування волосся" />
+        </div>
+        <h3 class="product-title">Фарбування волосся</h3>
+        <p class="product-price">Ціна: 499.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="5">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="5">Деталі</button>
+      </div>
+
+      <!-- ID 6: Укладка волосся -->
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/hair-styling.jpg" alt="Укладка волосся" />
+        </div>
+        <h3 class="product-title">Укладка волосся</h3>
+        <p class="product-price">Ціна: 199.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="6">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="6">Деталі</button>
+      </div>
+
+      <!-- ID 7: Масаж обличчя -->
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/face-massage.jpg" alt="Масаж обличчя" />
+        </div>
+        <h3 class="product-title">Масаж обличчя</h3>
+        <p class="product-price">Ціна: 299.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="7">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="7">Деталі</button>
+      </div>
+
+      <!-- ID 8: Брови та вії -->
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/brows-lashes.jpg" alt="Брови та вії" />
+        </div>
+        <h3 class="product-title">Брови та вії</h3>
+        <p class="product-price">Ціна: 179.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="8">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="8">Деталі</button>
+      </div>
+
+      <!-- ID 9: Гоління бороди -->
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/beard-shave.jpg" alt="Гоління бороди" />
+        </div>
+        <h3 class="product-title">Гоління бороди</h3>
+        <p class="product-price">Ціна: 159.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="9">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="9">Деталі</button>
+      </div>
+
+      <!-- ID 10: Дитяча стрижка -->
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/kids-haircut.jpg" alt="Дитяча стрижка" />
+        </div>
+        <h3 class="product-title">Дитяча стрижка</h3>
+        <p class="product-price">Ціна: 249.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="10">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="10">Деталі</button>
+      </div>
+
+      <!-- Товари ID 11–16 -->
+
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/hair-dryer.jpg" alt="Фен для волосся" />
+        </div>
+        <h3 class="product-title">Фен для волосся</h3>
+        <p class="product-price">Ціна: 799.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="11">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="11">Деталі</button>
+      </div>
+
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/hair-brush.jpg" alt="Розчіска" />
+        </div>
+        <h3 class="product-title">Професійна розчіска</h3>
+        <p class="product-price">Ціна: 129.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="12">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="12">Деталі</button>
+      </div>
+
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/scissors.jpg" alt="Ножиці" />
+        </div>
+        <h3 class="product-title">Ножиці для стрижки</h3>
+        <p class="product-price">Ціна: 349.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="13">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="13">Деталі</button>
+      </div>
+
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/curling-iron.jpg" alt="Плойка" />
+        </div>
+        <h3 class="product-title">Плойка для завивки</h3>
+        <p class="product-price">Ціна: 599.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="14">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="14">Деталі</button>
+      </div>
+
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/mirror.jpg" alt="Дзеркало" />
+        </div>
+        <h3 class="product-title">Дзеркало настільне</h3>
+        <p class="product-price">Ціна: 199.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="15">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="15">Деталі</button>
+      </div>
+
+      <div class="product-card">
+        <div class="cart-image-container">
+          <img src="images/shop/apron.jpg" alt="Фартух" />
+        </div>
+        <h3 class="product-title">Фартух перукаря</h3>
+        <p class="product-price">Ціна: 299.00 UAH</p>
+        <div class="quantity-controls">
+          <button class="quantity-button">-</button>
+          <input type="number" class="quantity-input" value="0" min="0" />
+          <button class="quantity-button">+</button>
+        </div>
+        <button class="add-to-cart-button" data-product-id="16">
+          Додати у кошик
+        </button>
+        <button class="details-button" data-product-id="16">Деталі</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">C&C</div>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="main.html" data-page="main">Головна</a></li>
+            <li><a href="shop.html" data-page="shop">Магазин</a></li>
+            <li><a href="support.html" data-page="support">Підтримка</a></li>
+            <li><a href="tasks.html" data-page="tasks">Задачі</a></li>
+          </ul>
+        </nav>
+        <p class="footer-copyright">
+          &copy; 2025 Chic & Charm. Усі права захищені.
+        </p>
+      </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="toggleCart()">&times;</span>
+        <h2>Кошик</h2>
+        <ul id="cart-items">
+          <li>
+            <span>№</span>
+            <span>Назва послуги</span>
+            <span>Кількість</span>
+            <span>Сума</span>
+            <span>Дії</span>
+          </li>
+        </ul>
+        <div class="cart-total-section">
+          Загальна сума:
+          <span class="cart-total" id="cart-total-modal">0.00 UAH</span>
+        </div>
+        <button class="checkout-button">Оформити замовлення</button>
+      </div>
+    </div>
+
+    <div id="details-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="toggleDetailsModal()">&times;</span>
+        <h2>Деталі послуги</h2>
+        <div id="details-content"></div>
+      </div>
+    </div>
+
+    <div id="warning-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="toggleWarningModal()">&times;</span>
+        <h2>Увага!</h2>
+        <p id="warning-message"></p>
+      </div>
+    </div>
+
+    <div id="confirm-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="toggleConfirmModal()">&times;</span>
+        <h2>Підтвердження замовлення</h2>
+        <p>Ви впевнені, що хочете оформити замовлення?</p>
+        <div class="confirm-buttons">
+          <button id="confirm-yes">Так</button>
+          <button onclick="toggleConfirmModal()">Ні</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="thank-you-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="toggleThankYouModal()"
+          >&times;</span
+        >
+        <h2>Дякуємо!</h2>
+        <p id="thank-you-message">Дякуємо за ваше замовлення!</p>
+      </div>
+    </div>
+
+    <div id="order-history-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="toggleOrderHistoryModal()"
+          >&times;</span
+        >
+        <h2>Історія замовлень</h2>
+        <ul id="order-history-list"></ul>
+        <p id="order-history-empty" style="display: none">
+          Історія замовлень порожня.
+        </p>
+      </div>
+    </div>
+
+    <div id="signInModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Вхід</h2>
+        <form id="signInForm">
+          <div class="form-group">
+            <label for="signInEmailPhone">Ел. пошта або номер телефону:</label>
+            <input
+              type="text"
+              id="signInEmailPhone"
+              name="signInEmailPhone"
+              required
+            />
+            <div class="error-message" id="signInEmailPhoneError"></div>
+          </div>
+          <div class="form-group">
+            <label for="signInPassword">Пароль:</label>
+            <input
+              type="password"
+              id="signInPassword"
+              name="signInPassword"
+              required
+            />
+            <div class="error-message" id="signInPasswordError"></div>
+          </div>
+          <div
+            class="form-message success"
+            id="signInSuccessMessage"
+            style="display: none; color: green; margin-bottom: 10px"
+          ></div>
+          <div
+            class="form-message error"
+            id="signInErrorMessage"
+            style="display: none; color: red; margin-bottom: 10px"
+          ></div>
+          <button type="submit">Увійти</button>
+          <p>
+            Немає аккаунту? <a href="#" id="goToRegister">Зареєструватися</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Реєстрація</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerName">Ім'я:</label>
+            <input type="text" id="registerName" name="registerName" required />
+            <div class="error-message" id="registerNameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="registerPhone">Номер телефону:</label>
+            <input
+              type="tel"
+              id="registerPhone"
+              name="registerPhone"
+              required
+            />
+            <div class="error-message" id="registerPhoneError"></div>
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Ел. пошта:</label>
+            <input
+              type="email"
+              id="registerEmail"
+              name="registerEmail"
+              required
+            />
+            <div class="error-message" id="registerEmailError"></div>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Пароль:</label>
+            <input
+              type="password"
+              id="registerPassword"
+              name="registerPassword"
+              required
+            />
+            <div class="error-message" id="registerPasswordError"></div>
+          </div>
+          <div
+            class="form-message success"
+            id="registerSuccessMessage"
+            style="display: none; color: green; margin-bottom: 10px"
+          ></div>
+          <div
+            class="form-message error"
+            id="registerErrorMessage"
+            style="display: none; color: red; margin-bottom: 10px"
+          ></div>
+          <button type="submit">Зареєструватися</button>
+          <p>Вже є аккаунт? <a href="#" id="goToSignIn">Увійти</a></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/header.js"></script>
+    <script src="js/dateTime.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/headerweather.js"></script>
+    <script src="js/haircuts.js"></script>
+  </body>
+</html>

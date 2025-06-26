@@ -1,0 +1,95 @@
+.cart-section {
+  display: flex;
+  align-items: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 блоки в ряд */
+  gap: 20px; /* Відстань між блоками */
+  padding: 20px 100px; /* Відступи зліва та справа */
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 16px;
+  height: 70px; /* Фіксована висота для назви */
+  overflow: hidden; /* Приховує довгі назви */
+}
+
+.product-price {
+  color: #ff0000;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.quantity-input {
+  width: 52px; /* Задайте бажану ширину */
+  height: 30px; /* Задайте бажану висоту */
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0 5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex; /* Використовуємо flex для центрування */
+  justify-content: center; /* Центрування по горизонталі */
+  align-items: center; /* Центрування по вертикалі */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Можете налаштувати ширину */
+  max-width: 800px; /* Додамо максимальну ширину */
+  border-radius: 8px;
+  position: relative;
+  /* Додамо відступи зверху та знизу, щоб візуально відцентрувати */
+  margin: 50px auto; /* Автоматичні відступи з боків для горизонтального центрування */
+  /* Заберемо автоматичний відступ зверху, оскільки використовуємо flex */
+}
+
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}

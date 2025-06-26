@@ -1,0 +1,181 @@
+/* Стилі для модальних вікон (загальні) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 15;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 40%; /* Ширина модального вікна */
+}
+
+/* Кнопка закриття (загальні) */
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Стилі для форми (загальні) */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif; /* Шрифт Montserrat для лейблів */
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: calc(100% - 12px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif; /* Шрифт Montserrat для полів вводу */
+}
+
+.form-group .error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+  font-family: "Montserrat", sans-serif; /* Шрифт Montserrat для повідомлень про помилки */
+}
+
+.form-message {
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif; /* Шрифт Montserrat для повідомлень успіху/помилки форми */
+}
+
+.form-message.success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.form-message.error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+/* Стилі для кнопок входу та реєстрації в модальних вікнах (загальні) */
+.modal-content button[type="submit"] {
+  background-color: #000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+  width: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+.modal-content button[type="submit"]:hover {
+  background-color: #333;
+}
+
+/* Стилі для посилань переходу між формами (загальні) */
+.modal-content p a {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif; /* Шрифт Montserrat для посилань */
+}
+
+.modal-content p a:hover {
+  color: darkblue;
+}
+
+/* Адаптація для планшетів (ширина екрану від 768px до 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .modal-content {
+    width: 60%; /* Збільшуємо ширину модального вікна на планшетах */
+    margin: 15% auto; /* Трохи більше відступу зверху */
+    padding: 25px; /* Збільшуємо внутрішні відступи */
+  }
+
+  .form-group {
+    margin-bottom: 20px; /* Збільшуємо відступ між елементами форми */
+  }
+
+  .modal-content button[type="submit"] {
+    font-size: 1.1em; /* Трохи збільшуємо розмір шрифту кнопки */
+    padding: 12px 25px; /* Збільшуємо розмір кнопки */
+  }
+
+  .close-button {
+    font-size: 32px; /* Трохи збільшуємо розмір кнопки закриття */
+  }
+}
+
+/* Адаптація для телефонів (ширина екрану до 767px) */
+@media (max-width: 767px) {
+  .modal-content {
+    width: 90%; /* Модальне вікно займає майже всю ширину екрану на телефонах */
+    margin: 15% auto; /* Збільшуємо відступ зверху */
+    padding: 15px; /* Зменшуємо внутрішні відступи */
+  }
+
+  .form-group {
+    margin-bottom: 12px; /* Зменшуємо відступ між елементами форми */
+  }
+
+  .form-group label {
+    font-size: 0.95em; /* Трохи зменшуємо розмір шрифту лейблів */
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="tel"],
+  .form-group input[type="email"],
+  .form-group input[type="password"] {
+    padding: 10px; /* Трохи збільшуємо внутрішні відступи полів вводу для зручності */
+    font-size: 0.95em; /* Трохи зменшуємо розмір шрифту полів вводу */
+  }
+
+  .form-group .error-message {
+    font-size: 0.85em; /* Ще трохи зменшуємо розмір шрифту повідомлень про помилки */
+  }
+
+  .modal-content button[type="submit"] {
+    font-size: 1em; /* Залишаємо стандартний розмір шрифту кнопки */
+    padding: 10px 20px; /* Залишаємо стандартний розмір кнопки */
+  }
+
+  .close-button {
+    font-size: 24px; /* Трохи зменшуємо розмір кнопки закриття */
+  }
+}

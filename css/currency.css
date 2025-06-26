@@ -1,0 +1,77 @@
+.currency-section {
+  background-color: #fff;
+  padding: 15px; /* Трохи зменшимо відступи для менших екранів */
+  margin-top: 15px; /* Трохи зменшимо верхній відступ */
+  border: 2px solid #000;
+  border-radius: 8px;
+  width: 90%; /* Займаємо більшу частину ширини на малих екранах */
+  max-width: 400px; /* Обмежуємо максимальну ширину для більших телефонів та планшетів */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.currency-container {
+  padding: 10px; /* Трохи зменшимо внутрішні відступи */
+}
+
+.currency-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Трохи зменшимо відстань між елементами форми */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 3px; /* Трохи зменшимо нижній відступ для label */
+  font-size: 0.9em; /* Зменшимо розмір шрифту label */
+}
+
+.currency-form button {
+  font-family: "Montserrat", sans-serif; /* Припускаю, що цей шрифт використовується */
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 15px; /* Зробимо кнопку трохи меншою для малих екранів */
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 8px; /* Трохи зменшимо верхній відступ кнопки */
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.currency-form button:hover {
+  background-color: #333;
+}
+
+.currency-form button:active {
+  transform: scale(0.95);
+}
+
+/* Медіа-запит для планшетів (орієнтація landscape або ширина екрана >= 600px) */
+@media (min-width: 600px) {
+  .currency-section {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .currency-container {
+    padding: 15px;
+  }
+
+  .currency-form {
+    gap: 10px;
+  }
+
+  .form-group label {
+    margin-bottom: 5px;
+    font-size: 1em;
+  }
+
+  .currency-form button {
+    padding: 12px 20px; /* Збільшимо розмір кнопки для планшетів */
+    margin-top: 10px;
+  }
+}

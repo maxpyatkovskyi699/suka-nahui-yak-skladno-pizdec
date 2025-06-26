@@ -1,0 +1,211 @@
+/* Загальні стилі секції */
+.masters-section {
+  position: relative;
+  width: 100%;
+  padding: 40px 15px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.masters-section h2 {
+  margin-bottom: 20px;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Слайдер контейнер */
+.masters-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 90%;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Слайдер */
+.masters-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Кожен слайд */
+.master-slide {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* Вертикальне розташування для телефонів */
+  align-items: center; /* Центрування для телефонів */
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 16px;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Стиль для зображення */
+.master-slide img {
+  width: 180px; /* Фіксована ширина */
+  height: 180px; /* Фіксована висота */
+  border-radius: 50%; /* Для круглої форми */
+  object-fit: cover; /* Обрізає зображення для заповнення контейнера */
+  border: 2px solid #000;
+  margin-bottom: 15px;
+}
+
+/* Інформація про майстра */
+.master-info {
+  text-align: center;
+  padding-right: 0;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.master-info h3 {
+  margin-top: 0;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.master-info p {
+  color: #444;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Стилі для контролів слайдера */
+.slider-controls {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Кожна стрілка */
+.slider-control {
+  font-size: 30px;
+  color: #000;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s, background-color 0.3s;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+/* Ефект на кнопках при наведенні */
+.slider-control:hover {
+  color: #fff;
+  background-color: #000;
+  transform: scale(1.1);
+}
+
+/* Медіа запити для планшетів */
+@media (min-width: 768px) {
+  .masters-section {
+    padding: 60px 20px;
+  }
+
+  .masters-section h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+
+  .masters-slider-container {
+    max-width: 80%;
+  }
+
+  .master-slide {
+    flex-direction: row; /* Горизонтальне розташування на планшетах */
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .master-slide img {
+    width: 120px; /* Трохи більший розмір на планшетах */
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 0;
+  }
+
+  .master-info {
+    text-align: left;
+    padding-right: 20px;
+  }
+
+  .master-info h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .master-info p {
+    font-size: 15px;
+  }
+
+  .slider-controls {
+    gap: 40px;
+  }
+
+  .slider-control {
+    font-size: 35px;
+    padding: 10px;
+  }
+}
+
+/* Медіа запити для десктопів */
+@media (min-width: 1024px) {
+  .masters-section {
+    padding: 60px 20px;
+  }
+
+  .masters-section h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+
+  .masters-slider-container {
+    max-width: 70%;
+  }
+
+  .master-slide {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .master-slide img {
+    width: 140px; /* Оригінальний розмір на десктопах */
+    height: 140px;
+    border-radius: 50%;
+  }
+
+  .master-info h3 {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .master-info p {
+    font-size: 16px;
+  }
+
+  .slider-controls {
+    gap: 50px;
+  }
+
+  .slider-control {
+    font-size: 40px;
+    padding: 10px;
+  }
+}

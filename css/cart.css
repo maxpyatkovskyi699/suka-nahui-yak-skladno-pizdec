@@ -1,0 +1,148 @@
+/* Імпорт шрифту Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  transition: transform 0.2s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
+.cart-icon img {
+  height: auto;
+  width: auto;
+  max-height: 24px; /* Зменшений розмір іконки */
+  margin-right: 5px;
+}
+
+#cart-item-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+.cart-total {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#cart-items {
+  list-style-type: none;
+  padding: 0;
+  width: 100%; /* Займає всю ширину контейнера */
+}
+
+#cart-items li {
+  display: grid;
+  grid-template-columns: 50px 1fr 100px 100px 60px; /* Додаємо колонку для дій */
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  align-items: center; /* Вирівнювання по вертикалі */
+}
+
+#cart-items li:first-child {
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+#cart-items li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  text-align: right;
+  font-weight: bold;
+  padding-top: 10px;
+  border-top: 2px solid #ccc;
+}
+
+.cart-summary p {
+  margin-bottom: 5px;
+}
+
+.checkout-button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-button:hover {
+  background-color: #333;
+}
+
+.checkout-button:active {
+  transform: scale(0.95);
+}
+
+.remove-from-cart-button {
+  background-color: #dc3545; /* Червоний колір для видалення */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.remove-from-cart-button:hover {
+  background-color: #c82333;
+}
+
+.remove-from-cart-button:active {
+  transform: scale(0.95);
+}
+
+.cart-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Стилі для модального вікна кошика */
+#cart-modal .modal-content {
+  background-color: #fefefe;
+  margin: 12% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Початкова ширина */
+  max-width: 800px; /* Максимальна ширина (збільшено) */
+  border-radius: 8px;
+}
+
+/* Стиль для кнопки закриття (якщо її ще немає) */
+#cart-modal .close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#cart-modal .close-button:hover,
+#cart-modal .close-button:focus {
+  color: black;
+  cursor: pointer;
+}
