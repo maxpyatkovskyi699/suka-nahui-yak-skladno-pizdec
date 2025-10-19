@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Додаємо елемент для відображення міста перед іншими даними
   weatherDataContainer.prepend(cityDisplayElement);
 
-  const apiKey = "63fad3791521cac9c2c9943a476053cb";
+  const apiKey = API_KEY;
 
   function updateWeatherData(data) {
     if (data && data.weather && data.main && data.wind && data.name) {
